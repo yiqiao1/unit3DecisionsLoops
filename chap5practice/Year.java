@@ -8,36 +8,56 @@ import java.util.Scanner;
  */
 public class Year
 {
-    public static void main(String[] args)
+    private boolean leapYear;
+    private int year;
+    
+    public Year(int year)
     {
-        Scanner in = new Scanner(System.in);
-        int year;
-        
-        System.out.print("Please enter a year: ");
-        year = in.nextInt();
-        
-        
+        year = year;
+    }
+    
+    public void isLeapYear()
+    {    
         if ((year % 4) == 0)
         {
             if ((year % 100) == 0)
             {
                 if ((year % 400) == 0)
                 {
-                    System.out.print(year + " is a leap year.");
+                    this.leapYear = true;
                 }
                 else 
                 {
-                    System.out.print(year + " is not a leap year.");
+                    this.leapYear = false;
                 }
             }
             else
             {
-                System.out.print(year + " is a leap year.");
+                this.leapYear = true;
             }
         }
         else
         {
-            System.out.print(year + " is not a leap year.");
+            this.leapYear = false;
+        }
+        
+        if (leapYear == true)
+        {
+            System.out.println("This is a leap year.");
+        }
+        else
+        {
+            System.out.println("This is not a leap year.");
         }
     }
+    
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        
+        System.out.print("Please enter a year: ");
+        Year year = new Year(in.nextInt());
+        year.isLeapYear();
+    }
 }
+
