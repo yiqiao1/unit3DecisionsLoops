@@ -37,6 +37,10 @@ public class Magpie2
 		{
 			response = "Why so negative?";
 		}
+		else if (statement.indexOf("yes") >= 0)
+		{
+		    response = "I totally agree!";
+		}
 		else if (statement.indexOf("mother") >= 0
 				|| statement.indexOf("father") >= 0
 				|| statement.indexOf("sister") >= 0
@@ -49,6 +53,10 @@ public class Magpie2
 		{
 			response = "Tell me more about your pets.";
 		}
+		else if (statement.indexOf("friend") >= 0)
+		{
+			response = "Tell you more about your friends.";
+		}
 		else if (statement.indexOf("Schmidt") >= 0)
 		{
 			response = "He sounds like a good teacher.";
@@ -56,6 +64,11 @@ public class Magpie2
 		else if (trimmedStatement.length() <= 0)
 		{
 		    response = ("Say something, please.");
+		}
+		else if (statement.indexOf("happy") >= 0
+				|| statement.indexOf("sad") >= 0)
+		{
+			response = "Why do you feel this way?";
 		}
 		else
 		{
