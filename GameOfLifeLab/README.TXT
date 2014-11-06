@@ -1,4 +1,4 @@
-Introduction
+﻿Introduction
 
 The goal of this lab is to apply your understanding of decision and loop
 	structures to implement a complex algorithm within the context of an
@@ -31,7 +31,6 @@ The universe of the Game of Life is an infinite two-dimensional orthogonal
 	each generation is a pure function of the preceding one). The rules
 	continue to be applied repeatedly to create further generations.
 
-
 Nonfunctional Requirements:
 
 * the program must be implemented in Java and utilize the GridWorld platform
@@ -39,6 +38,16 @@ Nonfunctional Requirements:
 	generations. It will be easier to implement the unit test if you directly
 	produce and display subsequent generations.
 
+Additional Requirements:
+
+* The grid is 18 x 18 cells
+* Live cells are red critters
+* Dead cells are green flowers
+* The initial pattern is chosen by code
+* The initial pattern is a square with an X inside
+* The program runs continuously until the user closes the frame
+* The time interval between generations is 10ms
+* Edge cases wrap around
 
 Artifacts to Produce:
 
