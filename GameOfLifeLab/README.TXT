@@ -47,7 +47,7 @@ Additional Requirements:
 * The initial pattern is a square with an X inside
 * The program runs continuously until the user closes the frame
 * The time interval between generations is 10ms
-* Edge cases wrap around
+* Edge cases don't wrap around
 
 Artifacts to Produce:
 

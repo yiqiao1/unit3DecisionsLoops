@@ -70,8 +70,8 @@ public class GameOfLifeTest
          */
         
         GameOfLife game = new GameOfLife();
-        final int ROWS = game.getNumRows();
-        final int COLS = game.getNumCols();
+        final int ROWS = 10;
+        final int COLS = 10;
 
         for(int row = 0; row < ROWS; row++)
         {
@@ -139,8 +139,8 @@ public class GameOfLifeTest
          */
         
         GameOfLife game = new GameOfLife();
-        final int ROWS = game.getNumRows();
-        final int COLS = game.getNumCols();
+        final int ROWS = 10;
+        final int COLS = 10;
 
         for(int row = 0; row < ROWS; row++)
         {
