@@ -270,12 +270,26 @@ public class GameOfLife
                 
                 int numNeighbors = neighbors.size();
                 
-                if (actor
+                if (actor == null)
                 {
-                    
+                    if (numNeighbors == 3)
+                    {
+                        Rock rock1 = new Rock();
+                        grid1.put(loc, rock1);
+                    }
+                }
+                else
+                {
+                    if (numNeighbors == 2 || numNeighbors == 3)
+                    {
+                        Rock rock2 = new Rock();
+                        grid1.put(loc, rock2);
+                    }
                 }
             }
         }
+        
+        world.show();
         
     }
     
