@@ -289,7 +289,7 @@ public class GameOfLife
             }
         }
         
-        world.show();
+        world.setGrid(grid1);
         
     }
     
@@ -334,8 +334,15 @@ public class GameOfLife
      *
      */
     public static void main(String[] args)
+        throws InterruptedException
     {
         GameOfLife game = new GameOfLife();
+        
+        while (true)
+        {
+            game.createNextGeneration();
+            Thread.sleep(1000);
+        }
     }
 
 }
