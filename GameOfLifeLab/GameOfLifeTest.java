@@ -39,7 +39,7 @@ public class GameOfLifeTest
     public void tearDown()
     {
     }
-
+      
     @Test
     public void testInitialState()
     {
@@ -53,13 +53,13 @@ public class GameOfLifeTest
          *  3 - - - - - - - - - - -  -  -  -  -  -  -  -  -
          *  4 - - - - - - - - - - -  -  -  -  -  -  -  -  -
          *  5 - - - - - x x x x x x  x  x  x  -  -  -  -  -
-         *  6 - - - - - x x - - - -  -  x  x  -  -  -  -  -
-         *  7 - - - - - x - x - - -  x  -  x  -  -  -  -  -
-         *  8 - - - - - x - - x - x  -  -  x  -  -  -  -  -
+         *  6 - - - - - x - - - - -  -  -  x  -  -  -  -  -
+         *  7 - - - - - x - - - - -  -  -  x  -  -  -  -  -
+         *  8 - - - - - x - x - - -  -  -  x  -  -  -  -  -
          *  9 - - - - - x - - - x -  -  -  x  -  -  -  -  -
-         *  10- - - - - x - - x - x  -  -  x  -  -  -  -  -
-         *  11- - - - - x - x - - -  x  -  x  -  -  -  -  - 
-         *  12- - - - - x x - - - -  -  x  x  -  -  -  -  -
+         *  10- - - - - x x x - - x  x  x  x  -  -  -  -  -
+         *  11- - - - - x - - - - -  -  -  x  -  -  -  -  - 
+         *  12- - - - - x - - - - -  -  -  x  -  -  -  -  -
          *  13- - - - - x x x x x x  x  x  x  -  -  -  -  -
          *  14- - - - - - - - - - -  -  -  -  -  -  -  -  -
          *  15- - - - - - - - - - -  -  -  -  -  -  -  -  -
@@ -70,6 +70,8 @@ public class GameOfLifeTest
          */
         
         GameOfLife game = new GameOfLife();
+        
+        // tests a section of the pattern (rows 1-9, columns 1-9)
         final int ROWS = 10;
         final int COLS = 10;
 
@@ -90,9 +92,7 @@ public class GameOfLifeTest
                         (row == 7 && col == 5) ||
                         (row == 8 && col == 5) ||
                         (row == 9 && col == 5) ||
-                        (row == 6 && col == 6) ||
-                        (row == 7 && col == 7) ||
-                        (row == 8 && col == 8) ||
+                        (row == 8 && col == 7) ||
                         (row == 9 && col == 9)
                         )
                         
@@ -119,19 +119,19 @@ public class GameOfLifeTest
          *  0 - - - - - - - - - - -  -  -  -  -  -  -  -  -
          *  1 - - - - - - - - - - -  -  -  -  -  -  -  -  -
          *  2 - - - - - - - - x x x  -  -  -  -  -  -  -  -
-         *  3 - - - - - - - x x x x  x  -  -  -  -  -  -  - 
-         *  4 - - - - - - x x x x x  x  x  -  -  -  -  -  -
-         *  5 - - - - - x x x x x x  x  x  x  -  -  -  -  -
-         *  6 - - - - x x x - - - -  -  x  x  x  -  -  -  -
-         *  7 - - - x x x - x x x x  x  -  x  x  x  -  -  -
-         *  8 - - x x x x - x - - -  x  -  x  x  x  x  -  -
-         *  9 - - x x x x - x - - -  x  -  x  x  x  x  -  -
-         *  10- - x x x x - x - - -  x  -  x  x  x  x  -  -
-         *  11- - - x x x - x x x x  x  -  x  x  x  -  -  - 
-         *  12- - - - x x x - - - -  -  x  x  x  -  -  -  -
-         *  13- - - - - x x x x x x  x  x  x  -  -  -  -  -
-         *  14- - - - - - x x x x x  x  x  -  -  -  -  -  -
-         *  15- - - - - - - x x x x  x  -  -  -  -  -  -  -
+         *  3 - - - - - - - - x x x  -  -  -  -  -  -  -  - 
+         *  4 - - - - - - - - x x x  -  -  -  -  -  -  -  -
+         *  5 - - - - - - - - - - -  -  -  -  -  -  -  -  -
+         *  6 - - - - - - - - - x -  -  -  -  -  -  -  -  -
+         *  7 - - - - - - - - - x -  -  -  -  -  -  -  -  -
+         *  8 - - x x x - - - x - -  -  -  -  x  x  x  -  -
+         *  9 - - x x x - - - - x x  -  -  -  x  x  x  -  -
+         *  10- - x x x - - - x x x  -  -  -  x  x  x  -  -
+         *  11- - - - - - - - - - -  -  -  -  -  -  -  -  - 
+         *  12- - - - - - - - - - -  -  -  -  -  -  -  -  -
+         *  13- - - - - - - - - - -  -  -  -  -  -  -  -  -
+         *  14- - - - - - - - x x x  -  -  -  -  -  -  -  -
+         *  15- - - - - - - - x x x  -  -  -  -  -  -  -  -
          *  16- - - - - - - - x x x  -  -  -  -  -  -  -  -
          *  17- - - - - - - - - - -  -  -  -  -  -  -  -  -
          *  18- - - - - - - - - - -  -  -  -  -  -  -  -  -
@@ -139,6 +139,13 @@ public class GameOfLifeTest
          */
         
         GameOfLife game = new GameOfLife();
+        
+        // after 3 generations...
+        game.createNextGeneration();
+        game.createNextGeneration();
+        game.createNextGeneration();
+        
+        // tests a section of the pattern (rows 1-9. columns 1-9)
         final int ROWS = 10;
         final int COLS = 10;
 
@@ -152,37 +159,20 @@ public class GameOfLifeTest
                 // if the cell at the current row and col should be alive, assert that the actor is not null
                 if(     (row == 2 && col == 8) ||
                         (row == 2 && col == 9) ||
-                        (row == 3 && col == 7) ||
                         (row == 3 && col == 8) ||
                         (row == 3 && col == 9) ||
-                        (row == 4 && col == 6) ||
-                        (row == 4 && col == 7) ||
                         (row == 4 && col == 8) ||
                         (row == 4 && col == 9) ||
-                        (row == 5 && col == 5) ||
-                        (row == 5 && col == 6) ||
-                        (row == 5 && col == 7) ||
-                        (row == 5 && col == 8) ||
-                        (row == 5 && col == 9) ||
-                        (row == 6 && col == 4) ||
-                        (row == 6 && col == 5) ||
-                        (row == 6 && col == 6) ||
-                        (row == 7 && col == 3) ||
-                        (row == 7 && col == 4) ||
-                        (row == 7 && col == 5) ||
-                        (row == 7 && col == 7) ||
-                        (row == 7 && col == 8) ||
+                        (row == 6 && col == 9) ||
                         (row == 7 && col == 9) ||
                         (row == 8 && col == 2) ||
                         (row == 8 && col == 3) ||
                         (row == 8 && col == 4) ||
-                        (row == 8 && col == 5) ||
-                        (row == 8 && col == 7) ||
+                        (row == 8 && col == 8) ||
                         (row == 9 && col == 2) ||
                         (row == 9 && col == 3) ||
                         (row == 9 && col == 4) ||
-                        (row == 9 && col == 5) ||
-                        (row == 9 && col == 7)
+                        (row == 9 && col == 9)
                         )
                         
                 {

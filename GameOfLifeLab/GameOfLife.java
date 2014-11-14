@@ -18,7 +18,7 @@ public class GameOfLife
     // the world comprised of the grid that displays the graphics for the game
     private ActorWorld world;
     
-    // the game board will have 18 rows and 18 columns
+    // the game board will have 19 rows and 19 columns
     private final int ROWS = 19;
     private final int COLS = 19;
 
@@ -98,14 +98,6 @@ public class GameOfLife
         Location loc10 = new Location(6, 5);
         grid.put(loc10, rock10);
         
-        Rock rock11 = new Rock();
-        Location loc11 = new Location(6, 6);
-        grid.put(loc11, rock11);
-        
-        Rock rock12 = new Rock();
-        Location loc12 = new Location(6, 12);
-        grid.put(loc12, rock12);
-        
         Rock rock13 = new Rock();
         Location loc13 = new Location(6, 13);
         grid.put(loc13, rock13);
@@ -113,14 +105,6 @@ public class GameOfLife
         Rock rock14 = new Rock();
         Location loc14 = new Location(7, 5);
         grid.put(loc14, rock14);
-        
-        Rock rock15 = new Rock();
-        Location loc15 = new Location(7, 7);
-        grid.put(loc15, rock15);
-        
-        Rock rock16 = new Rock();
-        Location loc16 = new Location(7, 11);
-        grid.put(loc16, rock16);
         
         Rock rock17 = new Rock();
         Location loc17 = new Location(7, 13);
@@ -131,13 +115,9 @@ public class GameOfLife
         grid.put(loc18, rock18);
         
         Rock rock19 = new Rock();
-        Location loc19 = new Location(8, 8);
+        Location loc19 = new Location(8, 7);
         grid.put(loc19, rock19);
-        
-        Rock rock20 = new Rock();
-        Location loc20 = new Location(8, 10);
-        grid.put(loc20, rock20);
-        
+
         Rock rock21 = new Rock();
         Location loc21 = new Location(8, 13);
         grid.put(loc21, rock21);
@@ -194,14 +174,6 @@ public class GameOfLife
         Location loc34 = new Location(12, 5);
         grid.put(loc34, rock34);
         
-        Rock rock35 = new Rock();
-        Location loc35 = new Location(12, 6);
-        grid.put(loc35, rock35);
-        
-        Rock rock36 = new Rock();
-        Location loc36 = new Location(12, 12);
-        grid.put(loc36, rock36);
-        
         Rock rock37 = new Rock();
         Location loc37 = new Location(12, 13);
         grid.put(loc37, rock37);
@@ -209,14 +181,6 @@ public class GameOfLife
         Rock rock38 = new Rock();
         Location loc38 = new Location(11, 5);
         grid.put(loc38, rock38);
-        
-        Rock rock39 = new Rock();
-        Location loc39 = new Location(11, 7);
-        grid.put(loc39, rock39);
-        
-        Rock rock40 = new Rock();
-        Location loc40 = new Location(11, 11);
-        grid.put(loc40, rock40);
         
         Rock rock41 = new Rock();
         Location loc41 = new Location(11, 13);
@@ -227,11 +191,23 @@ public class GameOfLife
         grid.put(loc42, rock42);
         
         Rock rock43 = new Rock();
-        Location loc43 = new Location(10, 8);
+        Location loc43 = new Location(10, 6);
         grid.put(loc43, rock43);
         
+        Rock rock15 = new Rock();
+        Location loc15 = new Location(10, 10);
+        grid.put(loc15, rock15);
+        
+        Rock rock16 = new Rock();
+        Location loc16 = new Location(10, 11);
+        grid.put(loc16, rock16);
+        
+        Rock rock20 = new Rock();
+        Location loc20 = new Location(10, 12);
+        grid.put(loc20, rock20);
+        
         Rock rock44 = new Rock();
-        Location loc44 = new Location(10, 10);
+        Location loc44 = new Location(10, 7);
         grid.put(loc44, rock44);
         
         Rock rock45 = new Rock();
@@ -256,12 +232,14 @@ public class GameOfLife
         // create the grid, of the specified size, that contains Actors
         Grid<Actor> grid = world.getGrid();
         
+        // create a new grid that shows the next generation
         BoundedGrid<Actor> grid1 = new BoundedGrid<Actor>(ROWS, COLS);
         
         for (int row = 0; row < ROWS; row++)
         {
             for (int col = 0; col < COLS; col++)
             {
+                // goes through every location in the grid, 
                 Location loc = new Location(row, col);
                 Actor actor = grid.get(loc);
                 
@@ -271,6 +249,7 @@ public class GameOfLife
                 int numNeighbors = neighbors.size();
                 
                 if (actor == null)
+                // if the location is empty and there are exactly 3 neighbors around it, place a rock in that location in the new grid
                 {
                     if (numNeighbors == 3)
                     {
@@ -279,6 +258,7 @@ public class GameOfLife
                     }
                 }
                 else
+                // if the location has an actor and the actor has exactly 2 or 3 neighbors, place a rock in that location in the new grid
                 {
                     if (numNeighbors == 2 || numNeighbors == 3)
                     {
@@ -338,10 +318,11 @@ public class GameOfLife
     {
         GameOfLife game = new GameOfLife();
         
+        // creates pause of 100 ms between each generation
         while (true)
         {
             game.createNextGeneration();
-            Thread.sleep(1000);
+            Thread.sleep(100);
         }
     }
 
