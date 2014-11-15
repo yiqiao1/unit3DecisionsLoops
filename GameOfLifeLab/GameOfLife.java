@@ -239,13 +239,15 @@ public class GameOfLife
         {
             for (int col = 0; col < COLS; col++)
             {
-                // goes through every location in the grid, 
+                // goes through every location in the grid,assigns object in location to an actor variable 
                 Location loc = new Location(row, col);
                 Actor actor = grid.get(loc);
                 
+                //gets neighbors surrounding the location and puts them in an arraylist
                 ArrayList<Location> neighbors = new ArrayList<Location>();
                 neighbors = grid.getOccupiedAdjacentLocations(loc);
                 
+                // gets size of neighbor array list (# of neighbors)
                 int numNeighbors = neighbors.size();
                 
                 if (actor == null)

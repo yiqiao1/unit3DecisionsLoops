@@ -40,13 +40,13 @@ Nonfunctional Requirements:
 
 Additional Requirements:
 
-* The grid is 18 x 18 cells
-* Live cells are red critters
-* Dead cells are green flowers
-* The initial pattern is chosen by code
-* The initial pattern is a square with an X inside
+* The grid is 19 x 19 cells
+* Live cells are black rocks
+* Dead cells are just blank squares
+* The initial pattern is hardcoded
+* The initial pattern is a square with an "acorn" inside
 * The program runs continuously until the user closes the frame
-* The time interval between generations is 10ms
+* The time interval between generations is 100ms
 * Edge cases don't wrap around
 
 Artifacts to Produce:
